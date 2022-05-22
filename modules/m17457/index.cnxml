@@ -1,0 +1,40 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Definición de Mantenibilidad</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>622ef357-338f-46a7-a9b1-9f3b9488d819</md:uuid>
+</metadata>
+  <content>
+    <para id="id8165049">El IEEE<footnote id="idm4612016">Institute of Electrical and Electronics Engineers. (1990) IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY.IEEE Std. 610.12 (1990) Standard Glossary of Software Engineering Terminology. IEEE Computer Society Press, Los Alamitos, CA.</footnote> (19990) define mantenibilidad como: “La facilidad con la que un sistema o componente software puede ser modificado para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarse a cambios en el entorno”.</para>
+    <para id="id10797422">Esta definición está directamente conectada con la definición del IEEE para mantenimiento del software: “es el proceso de modificar un componente o sistema software después de su entrega para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarlo a cambios en el entorno”.</para>
+    <para id="id10797427">En consecuencia, la mantenibilidad es una característica de calidad del software relacionada con la facilidad de mantenimiento, que nosotros consideraremos como una actividad de mantenimiento. </para>
+    <para id="id10900054">A mayor mantenibilidad, menores costes de mantenimiento (y viceversa).</para>
+    <para id="id10045307">La mantenibilidad debe establecerse como objetivo tanto en las fases iniciales del ciclo de vida, para reducir las posteriores necesidades de mantenimiento, como durante las fases de mantenimiento, para reducir los efectos laterales y otros inconvenientes ocultos (y seguir así reduciendo las futuras necesidades de mantenimiento).</para>
+    <para id="id9466683">La calidad del software es una compleja mezcla de factores que variarán a través de diferentes aplicaciones y según los clientes que las pidan. Dichos factores se pueden dividir en 2 grupos:</para>
+    <list list-type="bulleted" id="id11301612">
+      <item>factores que se pueden medir directamente</item>
+      <item>factores que se pueden medir sólo indirectamente.</item>
+    </list>
+    <para id="id11510566">McCall<footnote id="idm9966704">Roger S. Presuman (2002) Ingeniería del Software. Un enfoque práctico</footnote> propuso una útil clasificación de factores que afectan a la calidad del software. Estos factores son:</para>
+    <list list-type="bulleted" id="id10737573">
+      <item>Corrección → Hasta dónde satisface un programa su especificación y logra los objetivos propuestos por el cliente.</item>
+      <item>Fiabilidad → Hasta dónde se puede esperar que un programa lleve a cabo su función con la exactitud requerida.</item>
+      <item>Eficiencia → La cantidad de recursos informáticos y de códigos necesarios para que un programa realice su función.</item>
+      <item>Integridad → Hasta dónde se puede controlar el acceso al software o a los datos por personas no autorizadas.</item>
+      <item>Usabilidad → El esfuerzo necesario para aprender a operar con el sistema, preparar los datos de entrada e interpretar las salidas (resultados) de un programa.</item>
+      <item>Facilidad de mantenimiento (mantenibilidad) → El esfuerzo necesario para localizar y arreglar un error en un programa.</item>
+      <item>Flexibilidad → El esfuerzo necesario para modificar un programa que ya está en funcionamiento.</item>
+      <item>Facilidad de prueba → El esfuerzo necesario para probar un programa y asegurarse de que realiza correctamente su función.</item>
+      <item>Portabilidad → El esfuerzo necesario para transferir el programa de un entorno hardware/software a otro entorno diferente.</item>
+      <item>Reusabilidad → Hasta dónde se puede volver a emplear un programa en otras aplicaciones, en relación al empaquetamiento y alcance de las funciones que realiza el programa.</item>
+      <item>Interoperatividad → El esfuerzo necesario para acoplar un sistema con otro.</item>
+    </list>
+    <para id="id7135475">Hewlett-Packard ha desarrollado un conjunto de factores de calidad del software al que se le ha dado el acrónimo de FURPS (Funcionality, Usability, Reliability, Reformance, Supportability). Los atributos contemplados en cada uno de estos cinco factores son:</para>
+    <list list-type="bulleted" id="id6479915">
+      <item>Funcionalidad → Se valora evaluando el conjunto de características y capacidades del programa, la generalidad de las funciones entradas y la seguridad del sistema global.</item>
+      <item>Usabilidad → Se valora evaluando el conjunto de características y capacidades del programa, la generalidad de las funciones entregadas y la seguridad del sistema global.</item>
+      <item>Fiabilidad → Se evalúa midiendo la frecuencia y gravedad de los fallos, la exactitud de las salidas, el tiempo medio de fallos, la capacidad de recuperación de un fallo y la capacidad de predicción del programa.</item>
+      <item>Rendimiento → Se mide por la velocidad del procesamiento, el tiempo de respuesta, consumo de recursos, rendimiento efectivo total y eficacia.</item>
+      <item>Capacidad de Soporte → Combina la capacidad de ampliar el programa, adaptabilidad y servicios, así como la capacidad para hacer pruebas, compatibilidad, capacidad de configuración del software, la facilidad de instalación de un sistema y la facilidad con que se pueden localizar los programas.</item>
+    </list>
+    <para id="id9696956">Los factores de calidad FURPS y atributos descritos pueden usarse para establecer métricas de la calidad para todas las actividades del proceso del software</para>
+  </content>
+</document>

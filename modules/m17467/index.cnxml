@@ -1,0 +1,43 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas relacionadas con el proceso</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>be0ddc43-77e9-4931-abce-cf8c2eaaa2ce</md:uuid>
+</metadata>
+  <content>
+    <para id="id9030329">Las métricas del proceso se recopilan de todos los proyectos y durante un largo período de tiempo. Su intento es proporcionar indicadores que lleven a mejoras de los procesos de software a largo plazo. Un indicador es una métrica o una combinación de métricas que proporcionan una visión profunda del proceso del software, del proyecto de software o del producto en si.</para>
+    <para id="id8378186">La medición del proceso implica las mediciones de las actividades relacionadas con el software siendo algunos de sus atributos típicos el esfuerzo, el coste y los defectos encontrados. Las métricas permiten tener una visión profunda del proceso de software que ayudará a tomar decisiones más fundamentadas, ayudan a analizar el trabajo desarrollado, conocer si se ha mejorado o no con respecto a proyectos anteriores, ayudan a detectar áreas con problemas para poder remediarlos a tiempo y a realizar mejores estimaciones.</para>
+    <para id="id5817088">Para mejorar un proceso se deben medir los atributos del mismo, desarrollar métricas de acuerdo a estos atributos y utilizarlas para proporcionar indicadores que conduzcan la mejora del proceso. Los errores detectados antes de la entrega del software, la productividad, recursos y tiempo consumido y ajuste con la planificación son algunos de los resultados que pueden medirse en el proceso, así como las tareas específicas de la ingeniería del software.</para>
+    <para id="id10150980">Las métricas del proceso se caracterizan por:</para>
+    <list list-type="bulleted" id="id10740520">
+      <item>El control y ejecución del proyecto.</item>
+      <item>Medición de tiempos del análisis, diseño, implementación, implantación y postimplantación.</item>
+      <item>Medición de las pruebas (errores, cubrimiento, resultado en número de defectos y número de éxito).</item>
+      <item>Medición de la transformación o evolución del producto.</item>
+    </list>
+    <para id="id10015461">Estas métricas evalúan el proceso de fabricación del producto correspondiente. Algunos ejemplo clásicos de este tipo de métricas son el tiempo de desarrollo del producto, el esfuerzo que conlleva dicho desarrollo, el número y tipo de recursos empleados (personas, máquinas,…), el coste del proceso, etc.</para>
+    <para id="id8336040">El tiempo requerido para completar un proceso en particular (tiempo total del proyecto, por ingeniero, por actividad, etc) es un indicador de la mantenibilidad del sistema a tener en cuenta. Aunque no se puede generalizar, cuanto mayor es el tiempo total y por ingeniero para desarrollar un sistema mayor será su complejidad y por lo tanto más difícil será de mantener.</para>
+    <para id="id10081282">De la misma manera, cuantos mayores sean los costes requeridos para un proceso en particular (esfuerzo en personas-día, costes de viajes, recursos de hardware), menor será la mantenibilidad del sistema.</para>
+    <para id="id8597011">Además, de estas, el número de defectos descubiertos durante la fase de pruebas y las métricas relacionadas.</para>
+    <section id="id11104132">
+      <title>Defectos descubiertos durante las pruebas</title>
+      <para id="id10995473">El número de defectos encontrados durante la fase de pruebas una vez que el código está integrado está correlacionado positivamente con el número de defectos del software que se encontrarán durante la explotación del mismo. </para>
+      <para id="id10765538">Un gran número de defectos durante las pruebas indica que durante la fase de desarrollo se han cometido muchos errores, y, salvo un gran esfuerzo en la fase de pruebas, parte de estos errores se arrastrarán hasta que el sistema esté en explotación.</para>
+    </section>
+    <section id="id10757374">
+      <title>Métricas relacionadas con las reparaciones de procesos</title>
+      <para id="id6238165">Una posible manera de medir la mantenibilidad de un software durante su proceso de construcción es medir la frecuencia de fallos debidos a efectos laterales producidos después de una modificación (X):
+      <m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">X</m:mi>
+              <m:mo>=</m:mo> 
+              <m:mfrac> 
+                <m:mi mathvariant="bold">1 - A</m:mi>
+                <m:mi mathvariant="bold">B</m:mi>
+              </m:mfrac> 
+          </m:mrow>
+     </m:math> 
+</para>
+      <para id="id10995334">siendo A el número de fallos debidos a efectos laterales detectados y corregidos y B= número total de fallos corregidos.</para>
+      <para id="id10160201">Cuanto mayor sea X es predecible que más difícil será de mantener en el futuro el sistema.</para>
+    </section>
+  </content>
+</document>

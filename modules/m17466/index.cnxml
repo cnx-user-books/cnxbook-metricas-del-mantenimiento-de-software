@@ -1,0 +1,77 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas de Mantenibilidad Orientadas al Producto</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1b89b3e5-6c01-4d61-9415-13ba481e1595</md:uuid>
+</metadata>
+  <content>
+    <para id="id6946589">Estas métricas describen las características del producto que de alguna forma determinan la mantenibilidad, por ejemplo el tamaño, complejidad o características del diseño.</para>
+    <para id="id7326362">Las 4 métricas orientadas al producto son:</para>
+    <list list-type="bulleted" id="id11839682">
+      <item>La densidad de comentarios en el código</item>
+      <item>Métricas de Complejidad.</item>
+      <item>El índice de madurez del software (IMS)</item>
+      <item>Métricas en Orientación a Objetos: Chidamber &amp; Kemerer</item>
+    </list>
+    <section id="id7682966">
+      <title>Densidad de comentarios en el código</title>
+      <para id="id6133724">Aunque no existen muchas métricas conocidas a este respecto, es significativo para el mantenimiento de un sistema o componente software lo bien documentado que se encuentre. Obviamente, cuantos más comentarios haya en el código fuente, mayor mantenibilidad tendrá el software. </para>
+      <para id="id7338624">Para observar la densidad de comentarios que hay en el código hay que realizar una inspección del código fuente. Si el código fuente está realizado en Java, una medida fácilmente obtenible es la estudia la proporción de javadocs por número de líneas de código significativas, es decir, líneas de código que contengan sentencias que no sean de comienzo o fin (llaves, en el caso de Java) ni comentarios:</para>
+      <para id="id8473829"/>
+      <para id="id4395140"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">Densidad comentarios</m:mi>
+              <m:mo>=</m:mo> 
+              <m:mfrac> 
+                <m:mi mathvariant="bold">LOCS</m:mi>
+                <m:mi mathvariant="bold">nº Javadocs</m:mi>
+              </m:mfrac> 
+          </m:mrow>
+     </m:math> 
+</para>
+      <para id="id6211110">Cuanto mayor sea la densidad de comentarios, más mantenible será el software examinado.</para>
+    </section>
+    <section id="id10023626">
+      <title>Métricas de Complejidad</title>
+      <para id="id8692812">Son todas las métricas de software que definen de una u otra forma la medición de la complejidad; Tales como volumen, tamaño, anidaciones, costo (estimación), agregación, configuración, y flujo. Estas son los puntos críticos de la concepción, viabilidad, análisis, y diseño de software.</para>
+      <para id="id10990469">Los 2 tipos de métrica para calcular la complejidad es:</para>
+      <list list-type="bulleted" id="id7339527">
+        <item>Complejidad ciclomática de McCabe<footnote id="idm7604848">McCabe,T.J., y A.H. Watson, “Solftware Complexity”, Crosstalk.</footnote></item>
+        <item>Ciencia del Software de Halstead<footnote id="idp4699376">Halstead, M., “Elements of Software Science”, Holland.</footnote></item>
+      </list>
+    </section>
+    <section id="id8862158">
+      <title>Índice de Madurez del Software (IMS)</title>
+      <para id="id8666584">El estándar del IEEE 982.1-1988 sugiere un índice de madurez del software (IMS) como métrica específica de mantenimiento. Esta métrica proporciona una indicación de la estabilidad de un producto software. A medida que el IMS se aproxima a 1, el producto comienza a estabilizarse, y por lo tanto, menos esfuerzo de mantenimiento requerirá.</para>
+      <para id="id10085560">Para calcular el índice hacen falta una serie de medidas anteriores:</para>
+      <list list-type="bulleted" id="id9729425">
+        <item>Mt = número de módulos en la versión actual.</item>
+        <item>Fm = número de módulos en la versión actual que han sido modificados.</item>
+        <item>Fa = número de módulos en la versión actual que han sido añadidos.</item>
+        <item>Fe = número de módulos de la versión anterior que se han eliminado en la versión actual.</item>
+      </list>
+      <para id="id7625976">A partir de estas, el IMS se calcula de la siguiente forma:</para>
+<para id="id7483837"/>
+<para id="para1"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">IMS</m:mi>
+              <m:mo>=</m:mo> 
+              <m:mfrac> 
+                <m:mi mathvariant="bold">[Mt - ( Fa + Fm + Fe )]</m:mi>
+                <m:mi mathvariant="bold">Mt</m:mi>
+              </m:mfrac> 
+          </m:mrow>
+     </m:math> 
+</para>
+    </section>
+    <section id="id9417362">
+      <title>Métricas Orientadas a Objetos</title>
+      <para id="id7646534">Las métricas OO se centran en métricas que se pueden aplicar a las características de encapsulamiento, ocultamiento de información, herencia y técnicas de abstracción de objetos que hagan única a esa clase.</para>
+      <para id="id9798224">Chidamber &amp; Kemerer<footnote id="idm7623888">Chidamber, S.R., D.P. y C.F.Kemerer, “Management Use of Metrics for Object-Oriented Software: An Exploratory Analysis”, IEEE Trans. Software Engineering.</footnote> proponen una familia de medidas para desarrollos orientados a objetos:</para>
+      <list id="id8928395" list-type="bulleted"><item>Métodos ponderados por clase</item>
+        <item>Profundidad árbol de herencia</item>
+        <item>Número de descendientes</item>
+        <item>Acoplamiento entre clases</item>
+        <item>Respuesta para una clase</item>
+        <item>Carencia de cohesión en los métodos</item>      </list>
+    </section>
+  </content>
+</document>

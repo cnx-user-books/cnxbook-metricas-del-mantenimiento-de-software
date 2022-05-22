@@ -1,0 +1,30 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas de la Calidad del Diseño Orientado a Objetos del Software</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>c12e5fd1-8936-4c78-a3c6-9d450d2cbe47</md:uuid>
+</metadata>
+  <content>
+    <para id="id47247256">La calidad del software puede ser entendida como el grado con el cual el usuario percibe que el software satisface sus expectativas. El tipo y número de actividades de garantía de calidad que es necesario adoptar en un proyecto o en una organización depende del tamaño y complejidad de los productos software que se estén desarrollando. También influyen otros factores, como pueden ser el tipo de proceso de desarrollo de software o los métodos y herramientas utilizados, la estructura organizativa de la organización, la motivación del personal, entre otros. Según el modelo de calidad ISO 9126, la calidad de un proceso contribuye a mejorar la calidad del producto, y, a su vez, la calidad del producto contribuye a mejorar la calidad en uso. La finalidad de la calidad en uso es medir la efectividad, productividad, seguridad y la satisfacción de los usuarios (pertenecientes a perfiles determinados) que interactúan con el producto en escenarios específicos de uso. </para>
+    <para id="id46886319">Robert Martin<footnote id="idm5804080">Martin, R. (1995) OO Design Quality Metrics: An Analysis of Dependencies. Report on Object Analysis&amp;Design, vol. 2 (3).</footnote>, en 1995, estableció un conjunto de métricas para medir la calidad de los diseños orientados a objetos. En términos de la interdependencia entre los subsistemas del diseño (paquetes en Java) partiendo de la base de que, aunque las interrelaciones son necesarias, los diseños con subsistemas fuertemente interrelacionados son muy rígidos, poco reutilizables y difíciles de mantener. Martin propone una medida para cada paquete, que llama inestabilidad (I):</para>
+    <equation id="id45949045"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">I</m:mi>
+              <m:mo>=</m:mo> 
+              <m:mfrac> 
+                <m:mi mathvariant="bold">Ce</m:mi>
+                <m:mi mathvariant="bold">Ca + Ce</m:mi>
+              </m:mfrac> 
+          </m:mrow>
+     </m:math> </equation>
+    <para id="id45641517">Donde Ce es el número de clases dentro del paquete que dependen de otras clases de otros paquetes; Ca es el número de clases de otros paquetes que tienen una dependencia con clases del paquete. </para>
+    <para id="id45641554">La medida de inestabilidad está entre 0 y 1. Cuando es 1, significa que ningún paquete depende del paquete que se está midiendo, y por el contrario este paquete si depende de otros paquetes, siendo un paquete inestable: es no responsable y dependiente. La falta de paquetes que dependan de él no le ofrece razones para no cambiar, y los paquetes de los que depende pueden darle amplias razones para cambiar.</para>
+    <para id="id45641558">Por el contrario, cuando la inestabilidad es nula, I=0, significa que uno o varios paquetes dependen de él, pero él no depende de nadie. Es responsable e independiente, convirtiéndose en un paquete completamente estable. Los módulos que dependen de él hacen fuerza para que sea difícil de cambiar, y como él no depende de otros paquetes no se ve forzado a cambiar.</para>
+    <para id="id46921699">El principio de las dependencias estables dice que la métrica I de un paquete debe ser mayor que las métricas I de los paquetes de los que él depende, esto es la métrica I debe decrecer en la dirección de la dependencia.</para>
+    <para id="id45893697">Se debe tener presente que no es deseable que todos los paquetes sean completamente estables, porque el sistema no podría modificarse.</para>
+    <section id="id46578857">
+      <title>Ejemplo de cálculo de la estabilidad</title>
+      <para id="id45642317">En el ejemplo de la figura siguiente, se va a proceder a calcular la estabilidad del paquete que se encuentra en el centro de la figura. Se tienen 4 clases externas al paquete que tienen dependencia de las clases internas (la clase A se deriva de la clase e1, la clase B contiene objetos de la clase 2, la clase C contiene objetos de la clase 2, y la clase E se deriva de la clase 1), por lo tanto, se tiene que Ca=4.</para>
+      <para id="id45900539">Por otra parte se tiene que existen 3 relaciones de las clases interiores del paquete que tienen como destino clases exteriores al paquete, es decir, existen 3 dependencias de las clases interiores del paquete con clases exteriores (la clase 1 contiene objetos de la clase G, la clase 1 se deriva de la clase H, y la clase 2 tiene una relación de asociación con la clase I), por lo tanto Ce=3. Así, I=3/7. Por tanto, está casi en el límite de la inestabilidad.</para>
+      <figure id="id46540155"><media id="idm13274896" alt=""><image src="../../media/graphics1-0226.png" mime-type="image/png" height="473" width="715"/></media></figure>
+    </section>
+  </content>
+</document>

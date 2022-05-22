@@ -1,0 +1,27 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas de Mantenibilidad del Software</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>88c87ee6-5774-472a-81e0-e59774023766</md:uuid>
+</metadata>
+  <content>
+    <para id="id11301804">Se han propuesto cientos de métricas para el software, pero no todas proporcionan un soporte práctico para el desarrollador de software. Algunas demandan mediciones que son demasiado complejas, otras son tan esotéricas que pocos profesionales tienen la esperanza de entenderlas y otras violan las nociones básicas intuitivas de lo que realmente es el software de alta calidad.</para>
+    <para id="id6650607">Existen una serie de características que deberían acompañar a las métricas efectivas del software. Dichas características son:</para>
+    <list list-type="bulleted" id="id6372613">
+      <item>Simples y fáciles de calcular</item>
+      <item>Empírica e intuitivamente persuasivas</item>
+      <item>Consistentes y objetivas</item>
+      <item>Consistentes en el empleo de unidades y tamaño</item>
+      <item>Independientes del lenguaje de programación</item>
+      <item>Eficaz mecanismo para la realimentación de calidad</item>
+    </list>
+    <para id="id2739104">Aunque la mayoría de las métricas de software satisfacen las características anteriores, algunas de las métricas comúnmente empleadas dejan de cumplir una o dos.</para>
+    <para id="id9168001">Las métricas de mantenibilidad no pueden medir el coste de realizar un cambio particular al sistema software, sino que miden aspectos de la complejidad y la calidad de los programas ya que existe una alta correlación entre la complejidad y la mantenibilidad (a mayor complejidad menor mantenibilidad) y entre la calidad y la mantenibilidad (a mayor calidad mayor mantenibilidad – y viceversa – ).</para>
+    <para id="id8851338">Existen maneras de medir la mantenibilidad para todos los elementos software que están o estarán sometidos a mantenimiento: código, documentos de usuario, documentos de análisis o diseño, etc.</para>
+    <para id="id11300275">Las métricas del software se pueden clasificar en tres categorías (Kan<footnote id="idp6899152">Kan, S. (2002) Software Quality Metrics Overview. En Metrics and Models in Software Quality Engineering, 2nd Edition. Addison Wesley Professional</footnote>, 2002): </para>
+    <list list-type="enumerated" id="id6046173">
+      <item>Métricas de producto. Estas métricas describen las características del producto que de alguna forma determinan la mantenibilidad, por ejemplo el tamaño, complejidad o características del diseño.</item>
+      <item>Métricas del proceso. Las métricas del proceso pueden ser utilizadas para mejorar el desarrollo y mantenibilidad del software. Algunos ejemplos incluyen la eficacia de eliminar defectos durante el desarrollo, el patrón en el que aparecen los defectos durante las pruebas o el tiempo fijo de respuesta del proceso.</item>
+      <item>Métricas de proyecto. Las métricas de proyecto describen las características y ejecución del proyecto. Por ejemplo, el número de desarrolladores, el patrón de staffing en el ciclo de vida, coste, planificación y productividad del software.</item>
+    </list>
+    <para id="id7927224">Además, algunas métricas pueden pertenecer a múltiples categorías.</para>
+  </content>
+</document>

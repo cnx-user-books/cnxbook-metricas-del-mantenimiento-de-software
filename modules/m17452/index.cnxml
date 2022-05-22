@@ -1,0 +1,34 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Aspectos que influyen en la Mantenibilidad</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>69de61d3-de34-4960-8d6e-82c1bda2170d</md:uuid>
+</metadata>
+  <content>
+    <para id="id7836336">El IEEE<footnote id="idm4407296">Institute of Electrical and Electronics Engineers. (1990) IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY.IEEE Std. 610.12 (1990) Standard Glossary of Software Engineering Terminology. IEEE Computer Society Press, Los Alamitos, CA.</footnote> (19990) define mantenibilidad como: “La facilidad con la que un sistema o componente software puede ser modificado para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarse a cambios en el entorno”.</para>
+    <para id="id6977741">Esta definición está directamente conectada con la definición del IEEE para mantenimiento del software: “es el proceso de modificar un componente o sistema software después de su entrega para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarlo a cambios en el entorno”.</para>
+    <para id="id7732473">En consecuencia, la mantenibilidad es una característica de calidad del software relacionada con la facilidad de mantenimiento, que nosotros consideraremos como una actividad de mantenimiento. </para>
+    <para id="id6866206">A mayor mantenibilidad, menores costes de mantenimiento (y viceversa).</para>
+    <para id="id6866210">La mantenibilidad debe establecerse como objetivo tanto en las fases iniciales del ciclo de vida, para reducir las posteriores necesidades de mantenimiento, como durante las fases de mantenimiento, para reducir los efectos laterales y otros inconvenientes ocultos (y seguir así reduciendo las futuras necesidades de mantenimiento).</para>
+    <para id="id5784318">Existen unos pocos factores que afectan directamente a la mantenibilidad, de forma que si alguno de ellos no se satisface adecuadamente, ésta se resiente. Los tres más significativos son:</para>
+    <list list-type="bulleted" id="id5627666">
+      <item>Proceso de desarrollo: la mantenibilidad debe formar parte integral del proceso de desarrollo del software. Las técnicas utilizadas deben ser lo menos intrusivas posible con el software existente. Los problemas que surgen en muchas organizaciones de mantenimiento son de doble naturaleza: mejorar la mantenibilidad y convencer a los responsables de que la mayor ganancia se obtendrá únicamente cuando la mantenibilidad esté incorporada intrínsecamente en los productos software.</item>
+      <item>Documentación: En múltiples ocasiones, ni la documentación ni las especificaciones de diseño están disponibles, y por tanto, los costes del mantenimiento se incrementan debido al tiempo requerido para que un mantenedor entienda el diseño del software antes de poder ponerse a modificarlo. Las decisiones sobre la documentación que debe desarrollarse son muy importantes cuando la responsabilidad del mantenimiento de un sistema se va a transferir a una organización nueva.</item>
+      <item>Comprensión de Programas: La causa básica de la mayor parte de los altos costes del MS es la presencia de obstáculos a la comprensión humana de los programas y sistemas existentes. Estos obstáculos surgen de tres fuentes principales:<list list-type="bulleted" id="id7013290"><item>La información disponible es incomprensible, incorrecta o insuficiente.</item><item>La complejidad del software, de la naturaleza de la aplicación o de ambos.</item><item>La confusión, mala interpretación o olvidos sobre el programa o sistema.</item></list></item>
+    </list>
+    <para id="id7878537">Dependiendo de cómo se haya construido el software se puede aumentar la mantenibilidad. Los generadores de código, por lo general, no producen un código claro ni fácil de comprender, por lo que el mantenimiento del software así generado es peor. Por otro lado, las técnicas de programación estructurada, la aplicación de metodologías de ingeniería del software y el seguimiento de estándares, permiten la obtención de sistemas o componentes software con menos necesidades de mantenimiento, y en el caso de que se produzcan, mucho más fáciles de llevar a cabo.</para>
+    <para id="id9175954">Más concretamente, se han identificado los factores específicos que influyen en la mantenibilidad:</para>
+    <list list-type="bulleted" id="id9007904">
+      <item>Falta de cuidado en las fases de diseño, codificación o prueba.</item>
+      <item>Pobre configuración del producto software.</item>
+      <item>Adecuada cualificación del equipo de desarrolladores del software.</item>
+      <item>Estructura del software fácil de comprender.</item>
+      <item>Facilidad de uso del sistema.</item>
+      <item>Empleo de lenguajes de programación y sistemas operativos estandarizados.</item>
+      <item>Estructura estandarizada de la documentación.</item>
+      <item>Documentación disponible de los casos de prueba.</item>
+      <item>Incorporación en el sistema de facilidades de depuración.</item>
+      <item>Disponibilidad del equipo (computador y periféricos) adecuado para realizar el mantenimiento.</item>
+      <item>Disponibilidad de la persona o grupo que desarrolló originalmente el software.</item>
+      <item>Planificación del mantenimiento.</item>
+    </list>
+  </content>
+</document>

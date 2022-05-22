@@ -1,0 +1,40 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Estándar ISO 9126 del IEEE y la Mantenibilidad</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>3d263044-60f5-4eda-a117-23660ce72819</md:uuid>
+</metadata>
+  <content>
+    <para id="id19188646">ISO 9126 es un estándar internacional para la evaluación del Software. Está supervisado por el proyecto SQuaRE, ISO 25000:2005, el cuál sigue los mismos conceptos.</para>
+    <para id="id20860755">El estándar está dividido en cuatro partes las cuales dirigen, respectivamente, lo siguiente: modelo de calidad, métricas externas, métricas internas y calidad en las métricas de uso.</para>
+    <para id="id21014025">El modelo de calidad establecido en la primera parte del estándar, ISO 9126-1. Dicho estándar ha sido desarrollado en un intento de identificar los atributos clave de calidad para el software. El estándar identifica 6 atributos clave de calidad:</para>
+    <list list-type="bulleted" id="id3595878">
+      <item>Funcionalidad – El grado en que el software satisface las necesidades indicadas por los siguientes subatributos:<list list-type="bulleted" id="id8944896"><item>Idoneidad</item><item>Corrección</item><item>Interoperabilidad</item><item>Conformidad</item><item>Seguridad</item></list></item>
+      <item>Fiabilidad – Cantidad de tiempo que el software está disponible para su uso. Está referido por los siguientes subatributos: <list list-type="bulleted" id="id9659380"><item>Madurez</item><item>Tolerancia a fallos</item><item>Facilidad de recuperación</item></list></item>
+      <item>Usabilidad – Grado en que el software hace óptimo el uso de los recursos del sistema. Está indicado por los siguientes subatributos: <list list-type="bulleted" id="id20489912"><item>Facilidad de comprensión</item><item>Facilidad de aprendizaje</item><item>Operatividad</item></list></item>
+      <item>Eficiencia – Grado en que el software hace óptimo el uso de los recursos del sistema. Está indicado por los siguientes subatributos: <list list-type="bulleted" id="id3888535"><item>Tiempo de uso</item><item>Recursos utilizados</item></list></item>
+      <item>Mantenibilidad – Facilidad con que una modificación puede ser realizada. Está indicada por los siguientes subatributos: <list list-type="bulleted" id="id19905788"><item>Facilidad de análisis</item><item>Facilidad de cambio</item><item>Estabilidad</item><item>Facilidad de prueba</item></list></item>
+      <item>Portabilidad – La facilidad con que el software puede ser llevado de un entorno a otro. Está referido por los siguientes subatributos: <list list-type="bulleted" id="id18442106"><item>Facilidad de instalación</item><item>Facilidad de ajuste</item><item>Facilidad de adaptación al cambio</item></list></item>
+    </list>
+    <para id="id16396733">El atributo Conformidad no está listada arriba ya que se aplica a todas las características. Ejemplos son conformidad a la legislación referente a usabilidad y fiabilidad.</para>
+    <para id="id20609714">Un atributo es una entidad la cual puede ser verificada o medida en el producto software. Los atributos no están definidos en el estándar, ya que varían entre diferentes productos software.</para>
+    <para id="id7915273">Un producto software está definido en un sentido amplio como: los ejecutables, código fuente, descripciones de arquitectura, y así. Como resultado, la noción de usuario se amplía tanto a operadores como a programadores, los cuales son usuarios de componentes como son bibliotecas software.</para>
+    <para id="id21699769">El estándar provee un entorno para que las organizaciones definan un modelo de calidad para el producto software. Haciendo esto así, sin embargo, se lleva a cada organización la tarea de especificar precisamente su propio modelo. Esto podría ser hecho, por ejemplo, especificando los objetivos para las métricas de calidad las cuales evalúan el grado de presencia de los atributos de calidad.</para>
+    <para id="id11952126">Métricas internas son aquellas que no dependen de la ejecución del software (medidas estáticas).</para>
+    <para id="id7917541">Métricas externas son aquellas aplicables al software en ejecución.</para>
+    <para id="id20212451">La calidad en las métricas de uso están sólo disponibles cuando el producto final es usado en condiciones reales.</para>
+    <para id="id3057899">Idealmente, la calidad interna determina la calidad externa y esta a su vez la calidad en el uso.</para>
+    <para id="id20992770">Este estándar proviene desde el modelo establecido en 1977 por McCall y sus colegas, los cuales propusieron un modelo para especificar la calidad del software. El modelo de calidad McCall está organizado sobre tres tipos de Características de Calidad:</para>
+    <list list-type="bulleted" id="id3837558">
+      <item>Factores (especificar): Ellos describen la visión externa del software, como es visto por los usuarios.</item>
+      <item>Criterios (construir): Ellos describen la visión interna del software, con es visto por el desarrollador.</item>
+      <item>Métricas (controlar): Ellas son definidas y usadas para proveer una escala y método para la medida.</item>
+    </list>
+    <para id="id9933401">ISO 9126 distingue entre fallos y no conformidad, siendo un fallo el no cumplimiento de los requisitos previos, mientras que la no conformidad afecta a los requisitos especificados. Una distinción similar es hecha entre la validación y la verificación.</para>
+    <section id="id7496916">
+      <title>Utilidad de las normas ISO / IEC 9126 </title>
+      <para id="id9791729">Este estándar está pensado para los desarrolladores, adquirentes, personal que asegure la calidad y evaluadores independientes, responsables de especificar y evaluar la calidad del producto software. </para>
+      <para id="id21114315">Por tanto, puede servir para validar la completitud de una definición de requisitos, identificar requisitos de calidad de software, objetivos de diseño y prueba, criterios de aseguramiento de la calidad, etc. </para>
+      <para id="id20039508">La calidad de cualquier proceso del ciclo de vida del software (estándar ISO 12.207) influye en la calidad del producto software que, a su vez, contribuye a mejorar la calidad en el uso del producto. </para>
+      <para id="id16870640">La calidad del software puede evaluarse midiendo los atributos internos (medidas estáticas o productos intermedios) o atributos externos (comportamiento del código cuando se ejecuta).</para>
+    </section>
+  </content>
+</document>

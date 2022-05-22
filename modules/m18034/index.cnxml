@@ -1,0 +1,241 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas de Complejidad del Software</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>1baf187f-e465-4c3e-9f1d-708cd40a17d0</md:uuid>
+</metadata>
+  <content>
+    <para id="id11035112">Son todas las métricas de software que definen de una u otra forma la medición de la complejidad; Tales como volumen, tamaño, anidaciones, costo (estimación), agregación, configuración, y flujo. Estas son los puntos críticos de la concepción, viabilidad, análisis, y diseño de software.</para>
+    <para id="id9822009">Los 2 tipos de métrica para calcular la complejidad es:</para>
+    <list list-type="bulleted" id="id12337436">
+      <item>Complejidad ciclomática de McCabe<footnote id="idm10106656">McCabe,T.J., y A.H. Watson, “Solftware Complexity”, Crosstalk.</footnote></item>
+      <item>Ciencia del Software de Halstead<footnote id="idp1774064">Halstead, M., “Elements of Software Science”, Holland.</footnote></item>
+    </list>
+    <section id="id11481954">
+      <title>Complejidad ciclomática de McCabe </title>
+      <para id="id10910058">La complejidad ciclomática se basa en el recuento del número de caminos lógicos individuales contenidos en un programa. Para calcular la complejidad del software, Thomas McCabe utilizó la teoría y flujo de grafos. Para hallar la complejidad ciclomática, el programa se representa como un grafo, y cada instrucción que contiene, un nodo del grafo. Las posibles vías de ejecución a partir de una instrucción (nodo) se repesentan en el grafo como aristas. Por ejemplo, el código que se muestra a continuación con 2 sentencias selectivas anidadas genera el siguiente grafo:</para>
+<para id="id10777578">
+        <code display="block" id="idm1668464"> 1 if (condicion){</code>
+        <code display="block" id="idm3498992"> 2  if (condicion){</code>
+        <code display="block" id="idp577968"> 3      A;</code>
+        <code display="block" id="idm5819280">        B;</code>
+        <code display="block" id="idm1643072">    } else {</code>
+        <code display="block" id="idp2356288"> 4      C;</code>
+        <code display="block" id="idm595376">        D;</code>
+        <code display="block" id="idm2649344"> 5  }</code>
+        <code display="block" id="idp2223904">6 }</code>
+      </para>
+
+      <para id="id7281642">Si se realizase el grafo, se observaría que se encuentran 3 caminos posibles para llegar de la sentencia 1 a la sentencia 6:</para>
+      <para id="id13535134">Camino 1 (si ambos IF’s son verdad): Sentencias 1, 2, 3, 6</para>
+      <para id="id12257152">Camino 2 (si el primer IF es verdad y el segundo es falso): Sentencias 1, 4,6</para>
+      <para id="id11362444">Camino 3 (si el primer IF es falso):  Sentencias 1, 6</para>
+      <para id="id12406772">Este programa tiene una complejidad ciclomática de 3.</para>
+      <para id="id9184344">La complejidad ciclomática se puede calcular de otras maneras. Se puede utilizar la fórmula:</para>
+      <para id="id11364053"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">v(G) = e - n + 2</m:mi>
+          </m:mrow>
+     </m:math> </para>
+      <para id="id10914605">donde e representa el número de aristas y n el número de nodos.</para>
+      <para id="id8496783">Otra forma de calcular la complejidad ciclomática consiste en aplicar la siguiente fórmula:</para>
+      <para id="id12848662"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">v(G) = número de regiones cerradas en el grafo + 1</m:mi>
+          </m:mrow>
+     </m:math> </para>
+      <section id="id7541277">
+        <title>Ejemplo de Calcular la Complejidad Ciclomática</title>
+        <para id="id11252584">Calcular la complejidad ciclomática del método de ordenación de la Burbuja siguiendo el siguiente código:</para>
+        <para id="id9492409"><code display="block" id="idm4795392">Public static void bubbleSort2 (Sequence S) {</code>
+        </para>
+        <para id="id9871644"><code display="block" id="idm4048352"> Position prec, succ;</code>
+        </para>
+        <para id="id11001353">
+          <code display="block" id="idp2178928"> int n = S.size();</code>
+        </para>
+        <para id="id12748026"><code display="block" id="idm7058656"> for (int i = 0; i &lt; n; i++) { </code>
+        </para>
+        <para id="id8936955">
+          <code display="block" id="idm9425840">  prec = S.first();</code>
+        </para>
+        <para id="id9403461">
+          <code display="block" id="idm8006960">  for (int j=1; j &lt; n - i; j++) {</code>
+        </para>
+        <para id="id10993361">
+          <code display="block" id="idm179504">   succ = S.after(prec);</code>
+        </para>
+        <para id="id9281908">
+          <code display="block" id="idp235552">   if (valAtPos(prec) &gt; valAtPos(succ))</code>
+        </para>
+        <para id="id13089628">
+          <code display="block" id="idm123008">    S.swapElements(prec, succ);</code>
+        </para>
+        <para id="id12549445">
+          <code display="block" id="idm17392560">   rec = succ;</code>
+        </para>
+        <para id="id11359963">
+          <code display="block" id="idp2157248">  }</code>
+        </para>
+        <para id="id11606587">
+          <code display="block" id="idm4476560"> }</code>
+        </para>
+        <para id="id12411121">
+          <code display="block" id="idm5690320">}</code>
+        </para>
+        <para id="id13827283">El código da como resultado el siguiente grafo:</para>
+        <figure id="id9872122"><media id="idm183760" alt=""><image src="../../media/Figura7.gif" mime-type="image/gif" height="530" width="725"/></media></figure>
+        <para id="id8728600"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">v(G) = e - n + 2</m:mi>
+          </m:mrow>
+     </m:math> </para>
+        <para id="id83748392"/>
+        <para id="id11598252">v(G) = 12 - 10 + 2 = 4</para>
+        <para id="id11458884">Complejidad ciclomática = 4</para>
+      </section>
+    </section>
+    <section id="id13189287">
+      <title>Ciencia del software de Halstead</title>
+      <para id="id13988410">Durante el final de los años 70 y principios de los 80, Maurice Halstead desarrolla un conjunto de métricas llamadas Halstead Software Science, métricas basadas en el cálculo de palabras clave (reservadas) y variables.</para>
+      <para id="id11447970">Su teoría está basada en un simple cuenta (muy fácil de automatizar) de operadores y operandos en un programa:</para>
+      <list list-type="bulleted" id="id9831613">
+        <item>Los operadores son las palabras reservadas del lenguaje, tales como IF-THEN, READ, FOR,...; los operadores aritméticos +, -, *,..... los de asignación y los operadores lógicos AND, EQUAL TO,....</item>
+        <item>Los operandos son las variables, literales y las constantes del programa.</item>
+      </list>
+      <para id="id13724846">Halstead distingue entre el número de operadores y operandos únicos y el número total de operadores y operando. Por ejemplo, un programa puede tener un READ, siete asignaciones y un WRITE; por lo tanto tiene tres únicos operadores, pero nueve en total operadores, y de manera idéntica se procede con los operandos. Se utiliza la siguiente notación:</para>
+      <para id="id10334490"/>
+      <list list-type="bulleted" id="id12141030">
+        <item>n1 - número de operadores únicos que aparecen en un programa</item>
+        <item>N1 - número total de ocurrencias de operadores</item>
+        <item>n2 - número de operandos únicos que aparecen en un programa</item>
+        <item>N2 - número total de ocurrencias de operandos</item>
+      </list>
+      <para id="id13506288">Las métricas de la Ciencia del Software para cualquier programa escrito en cualquier lenguaje pueden ser derivadas de estas cuatro cuentas. A partir de ellas han sido elaboradas diferentes medidas para diversas propiedades de los programas, tales como longitud, volumen, etc...</para>
+      <para id="id13734570">Por ejemplo, consideremos el siguiente trozo de programa:</para>
+      <para id="id11020971">
+        <code display="block" id="idm17478144"> if (N&lt;2){</code>
+      </para>
+      <para id="id10993861">
+        <code display="block" id="idm2388496">     A=B*N;</code>
+      </para>
+      <para id="id12894339">
+        <code display="block" id="idp2130624">     System.out.println("El resultado es : " + A);</code>
+      </para>
+      <para id="id12256122">
+        <code display="block" id="idp2113824">}</code>
+      </para>
+      <para id="id7483923"/>
+      <para id="id7129813">A partir de aquí se deduce:</para>
+      <para id="id10994870">N2 = 6 (N, 2, A, B, N, A)</para>
+      <para id="id8058969"> N1 = 6 (if, {}, system.out.println, =, *, &lt;)</para>
+      <para id="id5792582"> n2 = 4 (N, A, B, 2)</para>
+      <para id="id13288317"> n1 = 6 (if, {}, system.out.println, =, *, &lt;)</para>
+      <para id="id83728394"/>
+      <para id="id10918982">Halstead permite obtener una medida de la longitud, N, de un programa, que es calculada como:</para>
+      <para id="id11282874">
+        <m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">N = N1 + N2 </m:mi>
+          </m:mrow>
+        </m:math> 
+      </para>
+      <para id="id11360692">N es una simple medida del tamaño de un programa. Cuanto más grande sea el tamaño de N, mayor será la dificultad para comprender el programa y mayor el esfuerzo para mantenerlo. N es una medida alternativa al simple conteo de líneas de código. Aunque es casi igual de fácil de calcular, N es más sensible a la complejidad que el contar el número de líneas porque N no asume que todas las instrucciones son igual de fácil o de difícil de entender.</para>
+      <para id="id11918913">La medida de longitud, N, es usada en otra estimación de tamaño de Halstead llamada volumen. Mientras que la longitud es una simple cuenta (o estimación) del total de operadores y operandos, el volumen da un peso extra al número de operadores y operandos únicos. Por ejemplo, si dos programas tienen la misma longitud N pero uno tiene mayor número de operadores y operandos únicos, que naturalmente lo hacen más difícil de entender y mantener, este tendrá un mayor volumen. La fórmula es la siguiente:</para>
+      <para id="id14078892"><m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">volumen V = N x log2(n) </m:mi>
+          </m:mrow>
+     </m:math> </para>
+      <para id="id10928075">donde 
+<m:math display="inline">
+           <m:mrow> 
+              <m:mi mathvariant="bold">n = n1 + n2</m:mi>
+          </m:mrow>
+     </m:math> </para>
+      <para id="id3505810">El esfuerzo es otra medida estudiada por Halstead que ofrece una medida del trabajo requerido para desarrollar un programa. Desde el punto de vista del mantenimiento, el esfuerzo se puede interpretar como una medida del trabajo requerido para comprender un software ya desarrollado.</para>
+      <para id="id11211910">La fórmula es la siguiente:</para>
+      <para id="id14014537">esfuerzo
+<m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">E</m:mi>
+              <m:mo>=</m:mo> 
+              <m:mfrac> 
+                <m:mi mathvariant="bold">V</m:mi>
+                <m:mi mathvariant="bold">L</m:mi>
+              </m:mfrac> 
+          </m:mrow>
+     </m:math> 
+</para>
+      <para id="id13191109">donde el volumen V es dividido por el nivel del lenguaje L. Éste indica si se está utilizando un lenguaje de alto o bajo nivel. Por ejemplo, una simple llamada a un procedimiento podría tener un valor L de 1; el COBOL podría tener 0,1 y el ensamblador podría tener un L de 0,01. Así pues el esfuerzo aumenta proporcionalmente con el volumen, pero decrece con la utilización de lenguajes de alto nivel.</para>
+      <para id="id12236137">Atendiendo a varios estudios empíricos, el esfuerzo, E, es incluso una medida mejor de la entendibilidad (comprensión) que N.</para>
+      <section id="id8289695">
+        <title>Ejemplo para calcular las medidas de Halstead</title>
+        <para id="id7238122">Calcular las medidas de Halstead de longitud y esfuerzo para el siguiente algoritmo:</para>
+        <para id="id13251721">
+          <code display="block" id="idm6300816">{ </code>
+        </para>
+        <para id="id14007575">
+          <code display="block" id="idm6064736">  for (i=2;i&lt;=n;i++) </code>
+        </para>
+        <para id="id8949038">
+          <code display="block" id="idm1557264">    for (j=1;j&lt;=i;j++) </code>
+        </para>
+        <para id="id7662155">
+          <code display="block" id="idm3897696">      if (x[i] &lt; x[j]) </code>
+        </para>
+        <para id="id5450544">
+          <code display="block" id="idp1356832">      { </code>
+        </para>
+        <para id="id13252036">
+          <code display="block" id="idm1178128">        aux = x[i]; </code>
+        </para>
+        <para id="id9791746">
+          <code display="block" id="idm6962752">        x[i] = x[j]; </code>
+        </para>
+        <para id="id10907049">
+          <code display="block" id="idm8426816">        x[j] = aux; </code>
+        </para>
+        <para id="id11950288">
+          <code display="block" id="idp2558368">      } </code>
+        </para>
+        <para id="id13001545">
+          <code display="block" id="idm8994992">}</code>
+        </para>
+        <para id="id10729248">Para realizar los cálculos de longitud y el volumen, vamos a realizar antes otros cálculos:</para>
+        <para id="id12550072"> Operadores:</para>
+        <para id="id13520835">    {..} → 2</para>
+        <para id="id12349716">    for(;;) → 2</para>
+        <para id="id12554709">    = → 5</para>
+        <para id="id13080814">    if → 1</para>
+        <para id="id11759843">    ; → 3</para>
+        <para id="id11581818">    (..) → 1</para>
+        <para id="id13746044">    &lt; → 1</para>
+        <para id="id13216319">    &lt; = → 2</para>
+        <para id="id12337520">    ++ → 2</para>
+        <para id="id11224428">    [] → 4</para>
+        <para id="id10916142">El número total de operadores (n1) son 10 y la cantidad de operadores (N1) que hay son 23.</para>
+        <para id="id13127667"> Operandos:</para>
+        <para id="id13851583">    i → 7</para>
+        <para id="id10878081">    n → 1</para>
+        <para id="id12940557">    j → 6</para>
+        <para id="id5588250">    x → 6</para>
+        <para id="id12524516">    aux → 2</para>
+        <para id="id8068197">El número total de operandos (n2) son 5 y la cantidad total (N2) son 22.</para>
+        <para id="id12399753">Por tanto, la longitud es <m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">N = N1 + N2</m:mi>
+          </m:mrow>
+     </m:math> </para>
+        <para id="id84738294"/>
+        <para id="id11365291">     N = 23 + 22 = 45</para>
+        <para id="id12118964">El volumen es 
+<m:math display="block">
+           <m:mrow> 
+              <m:mi mathvariant="bold">V = N x log2(n) </m:mi>
+          </m:mrow>
+     </m:math> </para>
+        <para id="id9845788">     V = 45 x log2 (10+5)= 175.8</para>
+        <para id="id11219461"/>
+      </section>
+    </section>
+  </content>
+</document>

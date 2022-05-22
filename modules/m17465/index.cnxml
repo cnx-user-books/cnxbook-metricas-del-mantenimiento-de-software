@@ -1,0 +1,51 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Métricas Orientadas a Objetos</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>4ab960e9-7f79-4dbd-8c28-2b9df655dd89</md:uuid>
+</metadata>
+  <content>
+    <para id="id12966451">Las métricas orientadas a objetos se centran en métricas que se pueden aplicar a las características de encapsulamiento, ocultamiento de información, herencia y técnicas de abstracción de objetos que hagan única a esa clase.</para>
+    <para id="id10355534">Chidamber &amp; Kemerer<footnote id="idm3488896">Chidamber, S.R., D.P. y C.F.Kemerer, “Management Use of Metrics for Object-Oriented Software: An Exploratory Analysis”, IEEE Trans. Software Engineering.</footnote> proponen una familia de medidas para desarrollos orientados a objetos:</para>
+    <list list-type="bulleted" id="id11740359">
+      <item>Métodos ponderados por clase (MPC): Tamaño y complejidad</item>
+      <item>Profundidad árbol de herencia (PAH): Tamaño</item>
+      <item>Número de descendientes (NDD): Tamaño, acoplamiento y cohesión</item>
+      <item>Acoplamiento entre clases (ACO): Acoplamiento</item>
+      <item>Respuesta para una clase (RPC): Comunicación y complejidad</item>
+      <item>Carencia de cohesión en los métodos (CCM): Cohesión interna</item>
+    </list>
+    <para id="id11732206">Estas métricas, en líneas generales, permiten averiguar cuán bien están definidas las clases y el sistema, lo cual tiene un impacto directo en la mantenibilidad del mismo, tanto por la comprensión de lo desarrollado como por la dificultad de modificarlo con éxito.</para>
+    <section id="id11140585">
+      <title>Métodos ponderados por clase</title>
+      <para id="id12536010">Los métodos ponderados por clase<footnote id="idm1579696">Weighted methods per class (WMC)</footnote> asumen que n métodos de complejidad c1,c2,…cn se definen para la clase C. La métrica de complejidad específica que se eligió debe normalizarse de manera que la complejidad nominal para un método toma un valor de 10. MPC = sumatorio de ci para cada i=1 hasta n.</para>
+      <para id="id4956548">El número de métodos y su complejidad son indicadores razonables de la cantidad de esfuerzo requerido para implementar y verificar una clase. Cuanto mayor sea el número de métodos, más complejo es el árbol de herencia. A medida que crece el número de métodos para una clase dada, más probable es que vuelvan más y más específicos de la aplicación, así que se limita el potencial de reutilización. El MPC debe mantenerse bajo.</para>
+    </section>
+    <section id="id12075914">
+      <title>Profundidad del árbol de herencia</title>
+      <para id="id7127734">Todos los autores hacen notar la necesidad de medir las estructuras hereditarias en términos de profundidad o de densidad de nodos. Dichas jerarquías pueden medirse como la profundidad de cada clase dentro de su jerarquía, es decir, la longitud máxima desde el nodo que representa la clase hasta la raíz del árbol.</para>
+      <para id="id11126968">A medida que crece el valor del PAH, es más probable que las clases de niveles inferiores hereden muchos métodos. Esto da lugar a posibles dificultades cuando se intenta predecir el comportamiento de una clase y por lo tanto, mantenerla. Una jerarquía profunda lleva también a una mayor complejidad de diseño. Por otro lado, los valores grandes de PAH implican que se pueden reutilizar muchos métodos, lo que debe ser considerado como un elemento a favor de la mantenibilidad.</para>
+      <para id="id12662218">Si tenemos el siguiente árbol:</para>
+      <figure id="id10998370"><media id="idp577968" alt=""><image src="../../media/graphics1-8403.png" mime-type="image/png" height="230" width="425"/></media></figure>
+      <para id="id11278564">El valor del PAH para la jerarquía de las clases mostradas es de 4.</para>
+    </section>
+    <section id="id3936650">
+      <title>Número de descendientes</title>
+      <para id="id9694311">Las subclases que son inmediatamente subordinadas a una clase de la jerarquía de clases se denominan sus descendientes. A medida que crece el número de descendientes<footnote id="idm2606032">Number of children (NOC)</footnote> NDD, se incrementa la reutilización, pero también implica que la abstracción representada por la clase predecesora se ve diluida. Esto dificulta el mantenimiento, ya que existe la posibilidad de que algunos de los descendientes no sean realmente miembros propios de la clase.</para>
+    </section>
+    <section id="id9507326">
+      <title>Acoplamiento entre clases</title>
+      <para id="id9148486">Para una clase determinada el acoplamiento entre clases<footnote id="idm17401008">Coupling between objects (CBO)</footnote> se define como el número de otras clases con las cuales está “acoplada”. Es por lo tanto una medida del fan-out, esto es, del número de colaboradores (clases que se utilizan desde esa). Sistemas en los cuales una clase tiene un alto ACO y todas las demás tienen valores próximos a cero indican una estructura no orientada a objetos, con una clase principal dirigente. Por el contrario, la existencia de muchas clases con un ACO grande indica que el diseñador ha afinado demasiado la “granularidad” del sistema. Ninguna de las dos situaciones es deseable para la mantenibilidad: la primera situación hace complejo el mantenimiento de la clase con gran ACO y en la segunda situación la complejidad para entender el flujo del programa complica el mantenimiento. </para>
+    </section>
+    <section id="id12596145">
+      <title>Respuesta para una clase</title>
+      <para id="id11134937">La respuesta para una clase (RPC)<footnote id="idm10818960">Response for class (RFC)</footnote> mide tanto la comunicación interna como la externa. Esta métrica captura el tamaño del conjunto de respuesta para una clase. Este conjunto de respuesta para una clase consiste en todos los métodos llamados por los métodos locales. Definimos RPC como el número de métodos locales más el número de métodos llamados por los métodos locales.</para>
+      <para id="id10165431">Otra definición que podemos dar del conjunto de respuesta de una clase es la siguiente: “conjunto de métodos que pueden ser ejecutados potencialmente en respuesta a un mensaje recibido por un objeto de esa clase”. La RPC se definiría como el número de métodos existentes en el conjunto de respuesta.</para>
+      <para id="id11775674">Hay que precisar que no se discrimina entre dos mensajes enviados a un mismo método pero desde diferentes partes de la clase.</para>
+      <para id="id9692300">A medida que el RPC crece, el esfuerzo necesario para las verificaciones y pruebas crece, ya que la complejidad global de diseño de la clase crece también.</para>
+    </section>
+    <section id="id11080778">
+      <title>Carencia de cohesión en los métodos</title>
+      <para id="id12032484">La cohesión de una clase está caracterizada por cuán estrechamente están relacionados los métodos locales a las instancias de variables locales en una clase. La carencia de cohexión en los métodos (CCM)<footnote id="idm9968272">Lack of cohesion in methods (LCOM)</footnote> se define como el número de conjuntos disjuntos de métodos locales.</para>
+      <para id="id11074389">Unos valores elevados para CCM implican que la clase podría diseñarse mejor descomponiéndola en dos o más clases distintas. Aun cuando existen casos en que es justificable un valor elevado de CCM, es deseable mantener un elevado grado de cohesión, esto es, mantener un valor bajo para CCM.</para>
+    </section>
+  </content>
+</document>

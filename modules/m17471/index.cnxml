@@ -1,0 +1,21 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Propiedades de la Mantenibilidad</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>685edd62-6634-4485-a61a-d547bcb9f455</md:uuid>
+</metadata>
+  <content>
+    <para id="id9823943">El IEEE<footnote id="idm3234640">Institute of Electrical and Electronics Engineers. (1990) IEEE Standard Computer Dictionary: A Compilation of IEEE Standard Computer Glossaries. New York, NY.IEEE Std. 610.12 (1990) Standard Glossary of Software Engineering Terminology. IEEE Computer Society Press, Los Alamitos, CA.</footnote> (19990) define mantenibilidad como: “La facilidad con la que un sistema o componente software puede ser modificado para corregir fallos, mejorar su funcionamiento u otros atributos o adaptarse a cambios en el entorno”.</para>
+    <para id="id8780154">La mantenibilidad se puede considerar como la combinación de dos propiedades diferentes: La reparabilidad y la flexibilidad.</para>
+    <section id="id19944038">
+      <title>Reparabilidad</title>
+      <para id="id16745283">Un sistema software es reparable si permite la corrección de sus defectos con una cantidad de trabajo limitada y razonable.</para>
+      <para id="id11983665">La reparabilidad se ve afectada por la cantidad y tamaño de los componentes o piezas. Un producto software que consiste en módulos bien diseñados es más fácil de analizar y reparar que uno monolítico, pero el incremento del número de módulos no implica un producto más reparable, ya que también aumenta la complejidad de las interconexiones entre módulos.</para>
+      <para id="id18766243">Así pues, se debe buscar un punto de equilibrio con la estructura de módulos más adecuada para garantizar la reparabilidad facilitando la localización y eliminación de los errores en unos pocos módulos.</para>
+      <para id="id5897106">Un software por mucho que se use no se gasta. Ya le podemos dar veces al botón de aceptar, que, en principio, no debería desgastarse y dejar de funcionar sin motivo aparente.</para>
+    </section>
+    <section id="id17029683">
+      <title>Flexibilidad</title>
+      <para id="id19760585">Un sistema software es flexible si permite cambios para que se satisfagan nuevos requerimientos, es decir, si puede evolucionar. Por su naturaleza inmaterial, es software es mucho más fácil de cambiar o incrementar por lo que respecta a sus funciones que otros productos de naturaleza física, por ejemplo, equipos hardware, pero esta flexibilidad se ve disminuida con cada nueva versión de un producto software, ya que cada versión complica la estructura del software y, por tanto, las futuras modificaciones serán más difíciles.</para>
+      <para id="id21612642">Aunque esto puede considerarse una generalidad, la aplicación de técnicas y metodologías apropiadas pueden minimizar el impacto en la flexibilidad de cada nueva modificación en el software. Es por esto que la flexibilidad es una característica tanto del producto software como de los procesos relacionados con su construcción. En términos de estos últimos, los procesos deben poderse acomodar a nuevas técnicas de gestión y organización, a cambios en la forma de entender la ingeniería, etc.</para>
+    </section>
+  </content>
+</document>

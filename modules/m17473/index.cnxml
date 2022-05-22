@@ -1,0 +1,24 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml">
+  <title>Técnica del Índice de mantenibilidad</title>
+  <metadata><md:content-id>undefined</md:content-id><md:title/><md:uuid>fc70f17c-4062-4d99-ba41-15158f816f4b</md:uuid>
+</metadata>
+  <content>
+    <para id="id9011961">El Índice de Mantenibilidad (IM) mide la facilidad de mantenimiento del producto considerado.</para>
+    <para id="id6970591">Toda acción de mantenimiento puede dividirse en 3 tareas:</para>
+    <list list-type="bulleted" id="id16804147">
+      <item>comprensión de los cambios que deben hacerse</item>
+      <item>realización de las modificaciones necesarias</item>
+      <item>pruebas de los cambios realizados</item>
+    </list>
+    <para id="id5653175">Welker<footnote id="idm1768320">Welker, K.D. y Oman, P.W. (1995) Software Maintainability Metrics Models in Practice. Crosstalk, Journal of Defense Software Engineering 8, 11 (November/December 1995), pp. 19-23.</footnote>, en 1995, definió el concepto de índice de mantenibilidad IM para intentar cuantificar la mantenibilidad de un sistema. Este concepto ha sido perfeccionado por múltiples autores a lo largo de estos años. </para>
+    <para id="id4999466">El IM de un conjunto de programas más básico es un polinomio de la siguiente forma: </para>
+    <para id="id13987890"><m:math display="inline">
+           <m:mrow> 
+              <m:mi mathvariant="bold">IM = 171 - 5.2 * ln(aveV) - 0.23 * aveV(g') - 16.2 * ln (aveLOC) + 50 * sin (sqrt(2.4 * perCM))
+</m:mi>
+          </m:mrow>
+     </m:math> </para>
+    <para id="id6437146">Donde aveV es la media del volumen V por módulo según Halstead, aveV(g’) es la media de la complejidad cilclomática por módulo, aveLOC es la media del número de líneas de código por módulo y perCM es la media porcentual de líneas de código comentadas.</para>
+    <para id="id7918628">Cuanto mayor sea el IM, mayor mantenibilidad tendrá el sistema. </para>
+  </content>
+</document>
